@@ -23,10 +23,8 @@ const AuthPage = () => {
       <Art>
         <FG>
           <StudentText>
-            <h1>
-              <span>Welcome to</span>
-            </h1>
-            <h1>student portal</h1>
+            <h1>Welcome to</h1>
+            <span>student portal</span>
             <p>Login to access your account</p>
           </StudentText>
           <img src={students} alt="students"></img>
@@ -54,10 +52,12 @@ const Auth = styled(motion.div)`
   background: #925fe2;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 `;
 
 const AuthLogic = styled(motion.div)`
   background: #1c1d21;
+  z-index: 2;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -73,6 +73,22 @@ const BG = styled(motion.div)`
   img {
     z-index: 1;
     position: absolute;
+  }
+
+  .vectorBottom {
+    transform: translate(20%, 50%);
+  }
+
+  .vectorLeft {
+    transform: translate(-30%, 50%);
+  }
+
+  .vectorTop {
+    transform: translate(130%, 0%);
+  }
+
+  .vectorTopBack {
+    transform: translate(100%, 0%);
   }
 `;
 
@@ -95,10 +111,15 @@ const FG = styled(motion.div)`
   h1 {
     font-weight: 700;
     font-size: 6vh;
-    line-height: 3.5rem;
+    line-height: 2rem;
   }
   p {
     padding-top: 1rem;
+  }
+  span {
+    color: white;
+    font-family: "Poppins";
+    font-size: 6vh;
   }
 `;
 
