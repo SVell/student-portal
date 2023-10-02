@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const Register = () => {
+const RegisterComponent = () => {
   const [password, setPassword] = useState("Password");
   const [repeatPassword, setRepeatPassword] = useState("Repeat Password");
   const [visible, setVisible] = useState(true);
   const [visibleRepeat, setVisibleRepeat] = useState(true);
 
   return (
-    <div>
+    <Register>
       <div className="register">
         <h2>Register</h2>
         <h4>Enter your details</h4>
@@ -44,8 +46,13 @@ const Register = () => {
           <button>Sign In</button>
         </div>
       </div>
-    </div>
+    </Register>
   );
 };
 
-export default Register;
+const Register = styled(motion.div)`
+  height: 50%;
+  width: 70%;
+`;
+
+export default RegisterComponent;
