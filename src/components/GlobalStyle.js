@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: 0;
 		font-family: 'Poppins';
 	}
+	h1, h2{
+		font-family: 'Poppins';
+		color: white;
+	}
 `;
 
 export default GlobalStyle;

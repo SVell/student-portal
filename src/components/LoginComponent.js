@@ -2,46 +2,66 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import { MainSignButton, InputField, Form } from "../styles";
+import { EyeComponent } from "./EyeComponent";
+import { LineComponent } from "./LIneComponent";
+import { SingInfoComponent } from "./SignInfoComponent";
+import FormTransitonComponent from "./FormTransitonComponent";
+
 const LoginComponent = () => {
-  const [password, setPassword] = useState("Password");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(true);
+  const [info, setInfo] = useState("Enter your account details");
 
   return (
     <Login>
-      <div className="login">
-        <h2>Login</h2>
-        <h4>Enter your account details</h4>
-        <form>
-          <div className="username">
-            <input value="Username" type="text" placeholder="Username"></input>
-            <div className="line"></div>
-          </div>
-          <div className="password">
-            <input
-              value={password}
-              type={visible ? "text" : "password"}
-              id="passwordInput"
-              placeholder="password"
-              onChange={(e) => setPassword(e.target.value)}
-            ></input>
-            <button>Eye</button>
-            <div className="line"></div>
-          </div>
-          <p>Forgot Password?</p>
-          <button>Login</button>
-        </form>
-        <div className="sing-up">
-          <p>Don't Have an account?</p>
-          <button>Sign Up</button>
+      <h2>Login</h2>
+      <SingInfoComponent info={info} setInfo={setInfo} />
+      <LoginForm>
+        <div className="username">
+          <InputField
+            value={username}
+            type="text"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          ></InputField>
+          <LineComponent />
         </div>
-      </div>
+        <div className="password">
+          <InputField
+            value={password}
+            type={visible ? "text" : "password"}
+            id="passwordInput"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          ></InputField>
+          <EyeComponent visible={visible} setVisible={setVisible} />
+        </div>
+        <LineComponent />
+        <p>Forgot Password?</p>
+        <MainSignButton>Login</MainSignButton>
+      </LoginForm>
+      <FormTransitonComponent
+        navigateTo="/register"
+        text="Don't have an account?"
+        buttonText="Sign Up"
+      />
     </Login>
   );
 };
 
 const Login = styled(motion.div)`
-  height: 50%;
-  width: 70%;
+  h2 {
+    font-size: 5vh;
+  }
+`;
+
+const LoginForm = styled(Form)`
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
 `;
 
 export default LoginComponent;

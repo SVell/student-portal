@@ -18,7 +18,9 @@ const AuthPage = () => {
   return (
     <Auth>
       <AuthLogic>
-        {pathId === "login" ? <LoginComponent /> : <RegisterComponent />}
+        <div className="sign">
+          {pathId === "login" ? <LoginComponent /> : <RegisterComponent />}
+        </div>
       </AuthLogic>
       <Art>
         <FG>
@@ -62,6 +64,10 @@ const AuthLogic = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .sign {
+    width: 55%;
+  }
 `;
 
 const Art = styled(motion.div)`
@@ -76,19 +82,23 @@ const BG = styled(motion.div)`
   }
 
   .vectorBottom {
-    transform: translate(20%, 50%);
+    right: 0%;
+    bottom: -10%;
   }
 
   .vectorLeft {
-    transform: translate(-30%, 50%);
+    right: 70%;
+    bottom: 30%;
   }
 
   .vectorTop {
-    transform: translate(130%, 0%);
+    right: 0%;
+    bottom: 65%;
   }
 
   .vectorTopBack {
-    transform: translate(100%, 0%);
+    right: 35%;
+    bottom: 80%;
   }
 `;
 
