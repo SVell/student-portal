@@ -3,10 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const SingInfoComponent = ({ info }) => {
+export const SingInfoComponent = ({ infoClassName, info }) => {
   return (
     <SignInfo>
-      <h4 className="info">{info}</h4>
+      <h4 className={infoClassName}>{info}</h4>
     </SignInfo>
   );
 };
