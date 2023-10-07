@@ -7,6 +7,7 @@ import { LineComponent } from "./LIneComponent";
 import { EyeComponent } from "./EyeComponent";
 import { SingInfoComponent } from "./SignInfoComponent";
 import FormTransitonComponent from "./FormTransitonComponent";
+import { fadeIn } from "../animations";
 
 const RegisterComponent = () => {
   const [password, setPassword] = useState("");
@@ -15,8 +16,8 @@ const RegisterComponent = () => {
   const [info, setInfo] = useState("Enter your account details");
 
   return (
-    <Register>
-      <h2>Register</h2>
+    <Register variants={fadeIn} initial="hidden" animate="show">
+      <motion.h2>Register</motion.h2>
       <SingInfoComponent info={info} setInfo={setInfo} />
       <Form>
         <div className="username">

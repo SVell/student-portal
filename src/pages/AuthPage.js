@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import RegisterComponent from "../components/RegisterComponent";
 import LoginComponent from "../components/LoginComponent";

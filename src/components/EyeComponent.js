@@ -1,10 +1,11 @@
 import React from "react";
 
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import show from "../img/show.png";
 import hide from "../img/hide.png";
+import { fadeIn } from "../animations";
 
 export const EyeComponent = ({ visible, setVisible }) => {
   return (

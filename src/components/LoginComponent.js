@@ -7,6 +7,7 @@ import { EyeComponent } from "./EyeComponent";
 import { LineComponent } from "./LIneComponent";
 import { SingInfoComponent } from "./SignInfoComponent";
 import FormTransitonComponent from "./FormTransitonComponent";
+import { fadeIn } from "../animations";
 
 const LoginComponent = () => {
   const [username, setUsername] = useState("");
@@ -15,15 +16,15 @@ const LoginComponent = () => {
   const [info, setInfo] = useState("Enter your account details");
 
   return (
-    <Login>
-      <h2>Login</h2>
+    <Login variants={fadeIn} initial="hidden" animate="show">
+      <motion.h2>Login</motion.h2>
       <SingInfoComponent info={info} setInfo={setInfo} />
       <LoginForm>
         <div className="username">
           <InputField
             value={username}
             type="text"
-            placeholder="Username"
+            placeholder="Username or email"
             onChange={(e) => setUsername(e.target.value)}
           ></InputField>
           <LineComponent />
